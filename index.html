@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ТСЖ «Родные просторы»</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>ТСЖ «Родные просторы»</h1>
+  <h2 id="page-subtitle">Управление крупным жилым комплексом</h2>
+
+  <nav>
+    <ul>
+      <li><a data-page="home">Главная</a></li>
+      <li><a data-page="services">Услуги и тарифы</a></li>
+      <li><a data-page="calc">Калькулятор платежей</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==================== ГЛАВНАЯ ==================== -->
+  <section id="home" class="page active">
+    <div class="content-card">
+      <h3>О нашем товариществе</h3>
+      <p>
+        ТСЖ «Родные просторы» объединяет собственников жилья крупного жилого комплекса,
+        включающего 8 многоквартирных домов, более 1200 квартир, подземный паркинг
+        и благоустроенную придомовую территорию. Мы обеспечиваем бесперебойную работу
+        инженерных систем, уборку, охрану и благоустройство.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <h3>Наши преимущества</h3>
+      <ul>
+        <li>Прозрачные тарифы и ежемесячные отчёты</li>
+        <li>Круглосуточная аварийная служба</li>
+        <li>Собственная клининговая и техническая бригада</li>
+        <li>Современная система видеонаблюдения</li>
+        <li>Удобный онлайн-калькулятор коммунальных платежей</li>
+      </ul>
+    </div>
+
+    <img src="https://img.magnific.com/free-photo/mythical-video-game-inspired-landscape-with-nature_23-2150974535.jpg?semt=ais_hybrid"
+         alt="Жилой комплекс">
+  </section>
+
+  <!-- ==================== УСЛУГИ ==================== -->
+  <section id="services" class="page">
+    <div class="content-card">
+      <h3>Перечень услуг</h3>
+      <ul>
+        <li>Содержание и текущий ремонт общего имущества</li>
+        <li>Уборка мест общего пользования и придомовой территории</li>
+        <li>Вывоз твёрдых коммунальных отходов</li>
+        <li>Обслуживание лифтового хозяйства</li>
+        <li>Охрана и видеонаблюдение</li>
+        <li>Аварийно-диспетчерское обслуживание (24/7)</li>
+      </ul>
+    </div>
+
+    <div class="content-card">
+      <h3>Действующие тарифы (с 01.01.2025)</h3>
+      <table>
+        <tr>
+          <td><strong>Услуга</strong></td>
+          <td><strong>Ед. изм.</strong></td>
+          <td><strong>Тариф, ₽</strong></td>
+        </tr>
+        <tr>
+          <td>Электроэнергия</td>
+          <td>1 кВт·ч</td>
+          <td>5.50</td>
+        </tr>
+        <tr>
+          <td>Холодная вода</td>
+          <td>1 м³</td>
+          <td>45.00</td>
+        </tr>
+        <tr>
+          <td>Горячая вода</td>
+          <td>1 м³</td>
+          <td>190.00</td>
+        </tr>
+        <tr>
+          <td>Водоотведение</td>
+          <td>1 м³</td>
+          <td>32.00</td>
+        </tr>
+        <tr>
+          <td>Содержание жилья</td>
+          <td>1 м²</td>
+          <td>58.00</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ==================== КАЛЬКУЛЯТОР ==================== -->
+  <section id="calc" class="page">
+    <div class="content-card calc-form">
+      <h3>Показания счётчиков</h3>
+
+      <label for="e-start">Электроэнергия — начальное показание (кВт·ч):</label>
+      <input type="number" id="e-start" min="0" step="0.1" placeholder="Например, 1200">
+
+      <label for="e-end">Электроэнергия — конечное показание (кВт·ч):</label>
+      <input type="number" id="e-end" min="0" step="0.1" placeholder="Например, 1350">
+
+      <label for="c-start">Холодная вода — начальное (м³):</label>
+      <input type="number" id="c-start" min="0" step="0.1" placeholder="Например, 100">
+
+      <label for="c-end">Холодная вода — конечное (м³):</label>
+      <input type="number" id="c-end" min="0" step="0.1" placeholder="Например, 112">
+
+      <label for="h-start">Горячая вода — начальное (м³):</label>
+      <input type="number" id="h-start" min="0" step="0.1" placeholder="Например, 50">
+
+      <label for="h-end">Горячая вода — конечное (м³):</label>
+      <input type="number" id="h-end" min="0" step="0.1" placeholder="Например, 55">
+
+      <button class="calc-btn" id="calcBtn">Рассчитать</button>
+
+      <div class="result" id="result"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div>ТСЖ «Родные просторы», г. Москва, ул. Крутая, д. 15</div>
+    <p>Телефон: +7 (495) 123-45-67 | Email: info@rodnye-prostory.ru</p>
+    <p>© 2026 Все права защищены</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

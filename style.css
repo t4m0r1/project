@@ -1,0 +1,251 @@
+/* ===== Базовые стили ===== */
+html {
+  font-family: Arial, sans-serif;
+  background-color: #c8e496;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: rgb(21, 22, 59);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  width: 600px;
+  max-width: 90%;
+  margin: 30px auto;
+  background-color: rgba(216, 247, 143, 0.9);
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: rgb(123, 167, 4);
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+p, li {
+  font-size: 16px;
+  color: #222;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  margin: 25px auto;
+  border-radius: 15px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 15px 0;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(21, 22, 59);
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: rgb(123, 167, 4);
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td {
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 12px 15px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 30px 20px;
+  background-color: rgba(33, 33, 33, 0.6);
+  color: white;
+  border-radius: 15px 15px 0 0;
+  margin-bottom: 40px;
+}
+
+footer p, footer div {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* ===== Разделы (SPA) ===== */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* ===== Анимация меню ===== */
+nav ul li {
+  position: relative;
+  animation: fadeInDown 0.8s ease both;
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.1s; }
+nav ul li:nth-child(2) { animation-delay: 0.2s; }
+nav ul li:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: rgb(123, 167, 4);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== Анимация формы расчёта ===== */
+.calc-form {
+  animation: slideUp 0.9s ease both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.calc-form label {
+  display: block;
+  font-size: 15px;
+  color: #222;
+  margin-top: 10px;
+}
+
+.calc-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 14px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.calc-form input:focus {
+  outline: none;
+  border-color: rgb(123, 167, 4);
+  box-shadow: 0 0 8px rgba(123, 167, 4, 0.5);
+}
+
+/* ===== Анимация кнопки "Рассчитать" ===== */
+.calc-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  animation: gradientShift 4s ease infinite;
+}
+
+.calc-btn:hover {
+  transform: scale(1.03);
+  animation: gradientShift 1s ease infinite, pulse 0.8s ease infinite alternate;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+  from { box-shadow: 0 0 0 rgba(123,167,4,0.7); }
+  to   { box-shadow: 0 0 18px rgba(123,167,4,0.9); }
+}
+
+/* ===== Результат ===== */
+.result {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(216, 247, 143, 0.9);
+  font-size: 17px;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result .total {
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(21, 22, 59);
+}
